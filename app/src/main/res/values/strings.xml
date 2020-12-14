@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="welcome_message">Welcome to Tech Archlight ToDo list App</string>
+    <string name="urgent">Urgent?</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="enter_to_do_item_here">Enter to do item here</string>
+    <string name="item_name_text">Item name</string>
+    <string name="item_urgency_text">Item urgency</string>
+</resources>
