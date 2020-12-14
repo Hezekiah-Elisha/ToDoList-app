@@ -4,7 +4,7 @@
 <!--    <?xml version="1.0" encoding="utf-8"?>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="50dp">
 
         <TextView
             android:id="@+id/item_name_text_view"
