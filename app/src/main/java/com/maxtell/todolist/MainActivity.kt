@@ -15,16 +15,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerAdapter: TodoItemsAdapter
     private lateinit var recyclerLayoutManager: RecyclerView.LayoutManager
 
-    var todoItemsList = ArrayList<String>()
+    var todoItemsList = ArrayList<TodoItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        todoItemsList.add("Buy groceries")
-        todoItemsList.add("Do laundry")
-        todoItemsList.add("Play guitar")
+        todoItemsList.add(TodoItem("buy groceries",true))
+        todoItemsList.add(TodoItem("Do laundry",true))
+        todoItemsList.add(TodoItem("Play guitar",false))
 
         recyclerLayoutManager = LinearLayoutManager(this)
         recyclerAdapter = TodoItemsAdapter(todoItemsList)
