@@ -7,4 +7,6 @@
     <string name="enter_to_do_item_here">Enter to do item here</string>
     <string name="item_name_text">Item name</string>
     <string name="item_urgency_text">Item urgency</string>
+    <string name="add_item_message">add item message</string>
+    <string name="edit_item_message">edit item message</string>
 </resources>

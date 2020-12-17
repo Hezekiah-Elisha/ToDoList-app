@@ -13,6 +13,18 @@ class AddItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_add_item)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_add_item)
+
+        val itemName = intent.getStringExtra("ITEM_NAME")
+        val itemUrgency = intent.getBooleanExtra("ITEM_URGENCY",false)
+
+        if(itemName != null){
+            binding.editTextItem.setText(itemName)
+            binding.tvTitle.setText(R.string.edit_item_message)
+        }
+
+        if(itemUrgency == true){
+            binding.cbUrgent.isChecked = true
+        }
     }
     public fun saveItemAction(view:View){
 

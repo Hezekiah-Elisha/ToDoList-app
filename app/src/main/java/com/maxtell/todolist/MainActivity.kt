@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         todoItemsList.add(TodoItem("Play guitar",false))
 
         recyclerLayoutManager = LinearLayoutManager(this)
-        recyclerAdapter = TodoItemsAdapter(todoItemsList)
+        recyclerAdapter = TodoItemsAdapter(todoItemsList, this)
 
         binding.todoItemRecyclerView.apply {
             setHasFixedSize(true)
