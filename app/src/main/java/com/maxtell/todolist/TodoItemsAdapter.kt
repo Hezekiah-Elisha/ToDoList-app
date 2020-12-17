@@ -26,6 +26,13 @@ class TodoItemsAdapter(private val todoItemsList:ArrayList<TodoItem>, val activi
                 intent.putExtra("ITEM_URGENCY",isItemUrgent)
                 activity.startActivity(intent)
             })
+            constraintLayout.setOnLongClickListener(View.OnLongClickListener {
+                val position : Int = parent.indexOfChild(it)
+                activity.todoItemsList.removeAt(position)
+                notifyItemRemoved(position)
+
+                true
+            })
         return viewHolder(constraintLayout)
     }
 
