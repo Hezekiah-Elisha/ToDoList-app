@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TableLayout
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,9 +23,20 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        todoItemsList.add(TodoItem("buy groceries",true))
-        todoItemsList.add(TodoItem("Do laundry",true))
-        todoItemsList.add(TodoItem("Play guitar",false))
+        val dbo = DatabaseOperations(this)
+        val cursor = dbo.getAllItems(dbo)
+        with(cursor){
+            while (moveToNext()){
+                val itemName = getString(getColumnIndex(DatabaseInfo.TableInfo.COLUMN_ITEM_NAME))
+                val itemUrgency = getInt(getColumnIndex(DatabaseInfo.TableInfo.COLUMN_ITEM_URGENCY))
+                val isUrgent = if (itemUrgency == 0)false else true
+                todoItemsList.add(TodoItem(itemName,isUrgent))
+            }
+        }
+
+//        todoItemsList.add(TodoItem("buy groceries",true))
+//        todoItemsList.add(TodoItem("Do laundry",true))
+//        todoItemsList.add(TodoItem("Play guitar",false))
 
         recyclerLayoutManager = LinearLayoutManager(this)
         recyclerAdapter = TodoItemsAdapter(todoItemsList, this)
