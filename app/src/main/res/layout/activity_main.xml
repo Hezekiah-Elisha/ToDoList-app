@@ -11,36 +11,66 @@
             android:id="@+id/home_tittle_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
             android:text="@string/welcome_message"
-            app:layout_constraintBottom_toTopOf="@+id/todo_item_recycler_view"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.36"
-            android:gravity="center"
-            android:textSize="20dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/home_tittle_text_view">
+
+            <Button
+                android:id="@+id/todays_items_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/purple_500"
+                android:text="@string/today_s_items"
+                android:textSize="18sp"
+                android:onClick="displayTodayItems"/>
+
+            <Button
+                android:id="@+id/past_items_button"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:text="@string/previous_items"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_700"
+                android:textSize="18sp"
+                android:onClick="displayPastItems"/>
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todo_item_recycler_view"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="164dp"
-            app:layout_constraintBottom_toTopOf="@+id/home_add_button"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         <Button
             android:id="@+id/home_add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="26dp"
+            android:onClick="navToAddItemAction"
             android:text="+"
             android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.949"
-            app:layout_constraintStart_toStartOf="parent"
-            android:onClick="navToAddItemAction"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

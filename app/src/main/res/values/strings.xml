@@ -9,4 +9,7 @@
     <string name="item_urgency_text">Item urgency</string>
     <string name="add_item_message">add item message</string>
     <string name="edit_item_message">edit item message</string>
+    <string name="today_s_items">Today\'s items</string>
+    <string name="previous_items">previous items</string>
+    <string name="date">date</string>
 </resources>

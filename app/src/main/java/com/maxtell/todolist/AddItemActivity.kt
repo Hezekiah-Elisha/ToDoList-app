@@ -45,9 +45,13 @@ class AddItemActivity : AppCompatActivity() {
         }else{
             dbo.updateItem(dbo, this.oldItem, newTodoItem)
         }
+        var saveIntent: Intent = Intent(this, MainActivity::class.java)
+        startActivity(saveIntent)
+//        finish()
     }
     public fun cancelAction(view:View){
         var cancelIntent: Intent = Intent(this, MainActivity::class.java)
         startActivity(cancelIntent)
+//        finish()
     }
 }
